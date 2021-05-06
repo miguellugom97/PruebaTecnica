@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Prueba Tecnica</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_buscador">Buscar clase, desafio o instructor</string>
+    <string name="disciplinas">Disciplinas</string>
+    <string name="clases_para_ti">Clases para ti</string>
+    <string name="consejos_utiles">Consejos útiles</string>
+    <string name="yoga">Yoga</string>
+    <string name="ordernar_por">Ordernar por:</string>
+    <string name="que_necesitaras">Que necesitarás</string>
+    <string name="descripcion">Descripción</string>\
+
+    <string-array name="ordenar_por">
+        <item>Más reciente</item>
+        <item>Más popular</item>
+    </string-array>
+</resources>

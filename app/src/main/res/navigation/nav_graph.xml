@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/catalogoFragment">
+
+    <fragment
+        android:id="@+id/buscadorFragment"
+        android:name="com.miguellugo.pruebatecnica.ui.fragments.buscador.BuscadorFragment"
+        android:label="fragment_buscador"
+        tools:layout="@layout/fragment_buscador" />
+    <fragment
+        android:id="@+id/catalogoFragment"
+        android:name="com.miguellugo.pruebatecnica.ui.fragments.catalogo.CatalogoFragment"
+        android:label="fragment_catalogo"
+        tools:layout="@layout/fragment_catalogo" >
+        <action
+            android:id="@+id/action_catalogoFragment_to_detalleFragment"
+            app:destination="@id/detalleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleFragment"
+        android:name="com.miguellugo.pruebatecnica.ui.fragments.detalle.DetalleFragment"
+        android:label="fragment_detalle"
+        tools:layout="@layout/fragment_detalle" >
+        <action
+            android:id="@+id/action_detalleFragment_to_catalogoFragment"
+            app:destination="@id/catalogoFragment" />
+    </fragment>
+</navigation>
