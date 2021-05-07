@@ -1,6 +1,6 @@
 # PruebaTecnica
 Buscador
-[Screenshot_1620364690](https://user-images.githubusercontent.com/48161333/117401232-d0392e80-aec9-11eb-9411-585b959573cc.png)
+![Screenshot_1620364690](https://user-images.githubusercontent.com/48161333/117401232-d0392e80-aec9-11eb-9411-585b959573cc.png)
 
 Catalogo
 ![Screenshot_1620364696](https://user-images.githubusercontent.com/48161333/117401288-e9da7600-aec9-11eb-8266-a1baffa1e362.png)
