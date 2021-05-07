@@ -1,6 +1,6 @@
 # PruebaTecnica
 
-Las pruebas se realizaron con 3 dispositivos distitos:
+Las pruebas se realizaron con 3 dispositivos distintos:
 * Google Pixel 3
 * Honor 7x
 * Moto E4 Plus
