@@ -1,4 +1,10 @@
 # PruebaTecnica
+
+Las pruebas se realizaron con 3 dispositivos distitos:
+* Google Pixel 3
+* Honor 7x
+* Moto E4 Plus
+
 Buscador
 ![Screenshot_1620364690](https://user-images.githubusercontent.com/48161333/117401232-d0392e80-aec9-11eb-9411-585b959573cc.png)
 
