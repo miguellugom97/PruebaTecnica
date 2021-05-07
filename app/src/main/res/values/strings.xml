@@ -9,7 +9,16 @@
     <string name="yoga">Yoga</string>
     <string name="ordernar_por">Ordernar por:</string>
     <string name="que_necesitaras">Que necesitarás</string>
-    <string name="descripcion">Descripción</string>\
+    <string name="descripcion">Descripción</string>
+
+    <string name="ejercicio_detalle">
+        Ubicarse contra la pared con leve flexión de rodillas para poder contactar tres puntos (cabeza, zona de la espalda entre los omoplatos y zona lumbar).
+        Sin perder en ningún momento el contacto de los tres puntos, elevar ambos brazos simultáneamente.
+        En caso de lograr una elevación completa sin perder los contactos, ¡felicitaciones!, la movilidad torácica de tu cuerpo es aceptable.
+        Caso contrario, será probable que durante los WODs, esa falta de movimiento sea compensada en ejercicios overhead con alguna otra parte del cuerpo
+    </string>
+    <string name="ha_ocurrido_un_error">Ha ocurrido un error</string>
+    <string name="registrar_actividad">Registrar Actividad</string>
 
     <string-array name="ordenar_por">
         <item>Más reciente</item>

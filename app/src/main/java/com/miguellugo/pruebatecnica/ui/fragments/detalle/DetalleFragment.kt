@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.viewbinding.library.fragment.viewBinding
-import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import com.miguellugo.pruebatecnica.R
 import com.miguellugo.pruebatecnica.databinding.FragmentDetalleBinding
+import com.miguellugo.pruebatecnica.model.Clase
 import com.miguellugo.pruebatecnica.viewmodel.SharedViewModel
-import java.util.*
+import com.squareup.picasso.Picasso
 
 class DetalleFragment : Fragment()
 {
@@ -36,20 +36,36 @@ class DetalleFragment : Fragment()
         getClase()
         binding.backImageView.setOnClickListener()
         {
+            sharedViewModel.fragment.observe(viewLifecycleOwner, {
+                backNavigation(it)
+            })
+        }
+    }
+
+    private fun backNavigation(fragment : String)
+    {
+        if (fragment == "buscador")
+        {
+            Navigation.findNavController(binding.root).navigate(R.id.action_detalleFragment_to_buscadorFragment)
+        }else {
             Navigation.findNavController(binding.root).navigate(R.id.action_detalleFragment_to_catalogoFragment)
         }
     }
 
     private fun getClase()
     {
-        sharedViewModel.nombre.observe(viewLifecycleOwner, {
+        sharedViewModel.clase.observe(viewLifecycleOwner, {
             val nombre = it
             showClase(nombre)
         })
     }
 
-    private fun showClase(nombre : String)
+    private fun showClase(clase : Clase)
     {
-        Toast.makeText(context, "Nombre $nombre", Toast.LENGTH_SHORT).show()
+        val (nombre,instructor,disciplina,imagen) = clase
+        binding.nombreTextview.text = nombre
+        binding.instructorTextview.text = instructor
+        binding.disciplinaTextview.text = disciplina
+        Picasso.get().load(imagen).fit().centerCrop().into(binding.claseImageView)
     }
 }

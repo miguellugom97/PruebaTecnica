@@ -3,13 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/catalogoFragment">
+    app:startDestination="@id/buscadorFragment">
 
     <fragment
         android:id="@+id/buscadorFragment"
         android:name="com.miguellugo.pruebatecnica.ui.fragments.buscador.BuscadorFragment"
         android:label="fragment_buscador"
-        tools:layout="@layout/fragment_buscador" />
+        tools:layout="@layout/fragment_buscador" >
+        <action
+            android:id="@+id/action_buscadorFragment_to_detalleFragment"
+            app:destination="@id/detalleFragment" />
+    </fragment>
     <fragment
         android:id="@+id/catalogoFragment"
         android:name="com.miguellugo.pruebatecnica.ui.fragments.catalogo.CatalogoFragment"
@@ -27,5 +31,13 @@
         <action
             android:id="@+id/action_detalleFragment_to_catalogoFragment"
             app:destination="@id/catalogoFragment" />
+        <action
+            android:id="@+id/action_detalleFragment_to_buscadorFragment"
+            app:destination="@id/buscadorFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/errorFragment"
+        android:name="com.miguellugo.pruebatecnica.ui.fragments.error.ErrorFragment"
+        android:label="fragment_error"
+        tools:layout="@layout/fragment_error" />
 </navigation>

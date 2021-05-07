@@ -13,7 +13,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.miguellugo.pruebatecnica.R
 import com.miguellugo.pruebatecnica.databinding.FragmentCatalogoBinding
-import com.miguellugo.pruebatecnica.ui.fragments.ClaseAdapter
+import com.miguellugo.pruebatecnica.model.Clase
 import com.miguellugo.pruebatecnica.viewmodel.BuscadorViewModel
 import com.miguellugo.pruebatecnica.viewmodel.SharedViewModel
 
@@ -56,9 +56,10 @@ class CatalogoFragment : Fragment(), ClaseAdapter.OnClaseClickListener
         binding.spinner.adapter = arrayAdapter
     }
 
-    override fun onRecyclerClick(nombre: String)
+    override fun onRecyclerClick(clase: Clase)
     {
-        sharedViewModel.saveNombre(nombre)
+        sharedViewModel.saveClase(clase)
+        sharedViewModel.saveFragment("catalogo")
         Navigation.findNavController(binding.root).navigate(R.id.action_catalogoFragment_to_detalleFragment)
     }
 }

@@ -7,20 +7,25 @@ import android.view.ViewGroup
 import android.viewbinding.library.fragment.viewBinding
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.miguellugo.pruebatecnica.R
 import com.miguellugo.pruebatecnica.databinding.FragmentBuscadorBinding
-import com.miguellugo.pruebatecnica.ui.fragments.ClaseAdapter
+import com.miguellugo.pruebatecnica.model.Clase
+import com.miguellugo.pruebatecnica.ui.fragments.catalogo.ClaseAdapter
 import com.miguellugo.pruebatecnica.viewmodel.BuscadorViewModel
+import com.miguellugo.pruebatecnica.viewmodel.SharedViewModel
 
 
-class BuscadorFragment : Fragment(), ClaseAdapter.OnClaseClickListener
+class BuscadorFragment : Fragment(), ClaseHorizontalAdapter.OnClaseClickListener
 {
     private val binding : FragmentBuscadorBinding by viewBinding()
     private val disciplinaAdapter = DisciplinaAdapter()
-    private val claseAdapter = ClaseAdapter(this)
+    private val claseHorizontalAdapter = ClaseHorizontalAdapter(this)
     private val consejoAdapter = ConsejosAdapter()
+    private val sharedViewModel : SharedViewModel by activityViewModels()
 
     private lateinit var buscadorViewModel : BuscadorViewModel
     override fun onCreateView(
@@ -56,9 +61,9 @@ class BuscadorFragment : Fragment(), ClaseAdapter.OnClaseClickListener
     private fun initClaseRecycler()
     {
         val horizontalLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        binding.claseRecyclerView.adapter = claseAdapter
+        binding.claseRecyclerView.adapter = claseHorizontalAdapter
         binding.claseRecyclerView.layoutManager = horizontalLayoutManager
-        claseAdapter.setData(buscadorViewModel.getClases())
+        claseHorizontalAdapter.setData(buscadorViewModel.getClases())
     }
 
     private fun initConsejoRecycler()
@@ -69,8 +74,10 @@ class BuscadorFragment : Fragment(), ClaseAdapter.OnClaseClickListener
         consejoAdapter.setData(buscadorViewModel.getConsejos())
     }
 
-    override fun onRecyclerClick(nombre: String)
+    override fun onRecyclerClick(clase: Clase)
     {
-        Toast.makeText(context, "Nombre : $nombre", Toast.LENGTH_SHORT).show()
+        sharedViewModel.saveClase(clase)
+        sharedViewModel.saveFragment("buscador")
+        Navigation.findNavController(binding.root).navigate(R.id.action_buscadorFragment_to_detalleFragment)
     }
 }

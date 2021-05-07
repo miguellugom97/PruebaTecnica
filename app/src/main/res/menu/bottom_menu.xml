@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/buscadorFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/errorFragment"
+        android:icon="@drawable/ic_post_covid"
+        android:title="Post COVID" />
+    <item
+        android:id="@+id/catalogoFragment"
+        android:icon="@drawable/ic_clases"
+        android:title="Clases" />
+    <item
+        android:id="@+id/errorFragment"
+        android:icon="@drawable/ic_nutricion"
+        android:title="Nutrición"
+        tools:ignore="DuplicateIds" />
+    <item
+        android:id="@+id/errorFragment"
+        android:icon="@drawable/ic_desafios"
+        android:title="Desafíos"
+        tools:ignore="DuplicateIds" />
+</menu>
