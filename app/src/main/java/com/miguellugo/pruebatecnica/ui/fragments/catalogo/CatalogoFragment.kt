@@ -40,6 +40,7 @@ class CatalogoFragment : Fragment(), ClaseAdapter.OnClaseClickListener
     private fun setup() {
         initClaseRecycler()
         initSpinner()
+        navigation()
     }
 
     private fun initClaseRecycler()
@@ -54,6 +55,15 @@ class CatalogoFragment : Fragment(), ClaseAdapter.OnClaseClickListener
         val strings = resources.getStringArray(R.array.ordenar_por)
         val arrayAdapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, strings)
         binding.spinner.adapter = arrayAdapter
+    }
+
+    private fun navigation()
+    {
+        val nav = Navigation.findNavController(binding.root)
+        binding.searchimageView.setOnClickListener()
+        {
+            nav.navigate(R.id.action_catalogoFragment_to_buscadorFragment)
+        }
     }
 
     override fun onRecyclerClick(clase: Clase)

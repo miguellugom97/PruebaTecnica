@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_catalogoFragment_to_detalleFragment"
             app:destination="@id/detalleFragment" />
+        <action
+            android:id="@+id/action_catalogoFragment_to_buscadorFragment"
+            app:destination="@id/buscadorFragment" />
     </fragment>
     <fragment
         android:id="@+id/detalleFragment"

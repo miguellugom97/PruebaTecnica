@@ -1,5 +1,7 @@
 package com.miguellugo.pruebatecnica.ui.fragments.detalle
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -40,6 +42,22 @@ class DetalleFragment : Fragment()
                 backNavigation(it)
             })
         }
+        binding.registrarActividadButton.setOnClickListener()
+        {
+            registrarActividad()
+        }
+    }
+
+    private fun registrarActividad()
+    {
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle("Registro exitoso")
+            .setMessage("La actividad ha sido registrada")
+            .setPositiveButton("Aceptar") { dialogInterface: DialogInterface, i: Int ->
+                dialogInterface.dismiss()
+            }
+            .create()
+        builder.show()
     }
 
     private fun backNavigation(fragment : String)
